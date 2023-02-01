@@ -1,0 +1,11 @@
+se a página 2 contain active, a pagina 1 terá display block
+se a página 3 contain active, a página 1 terá display block e a 2 active.
+
+se a página 1 contain display block, as pags 2 e 3 terão active.
+se a página 2 contain display block, as pags 1 e 3 terão active.
+se a página 3 contain display block, as pags 1 e 2 terão active.
+
+IR PARA PÁGINA 2, PÁGS 1 E 3 CONTAIN ACTIVE
+VOLTAR A PAGINA 1, PAGINA 2 E 3 CONTAIN ACTIVE.
+IR P PAG 3, PAGS 1 E 2 CONTAIN ACTIVE
+VOLTAR P PAG 2, PAGS 1 E 3 CONTAIN ACTIVE.
