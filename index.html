@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- google-fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
@@ -52,7 +56,7 @@
     </div>
   </div>
   <div class="right-menu">
-        <div class="right-menu-step1">
+        <!-- <div class="right-menu-step1">
             <div className="right-menu-info">
                 <h1>Personal Info</h1>
                 <small>Please provide your name, email adress and phone number.</small>
@@ -119,7 +123,6 @@
                     <p>Online Service</p> 
                     <span class="itemDescription">Acess to multiplayer games</span>
                   </div>
-                <!-- <span class="price-page3">+$1/mo</span> -->
                 <h3 class="price-page3">+$1<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
               <div class="item" id="item2">
@@ -143,8 +146,41 @@
               <button id="backtoStep2" onclick="backtostep2()">Go Back</button>
               <button id="btnStep4" class='btn'>Next Step</button>
             </div>
-          </div>
-   </div>
+          </div> -->
+          <div class="right-menu-step4">
+            <div class="right-menu-info">
+              <h1>Finishing up</h1>
+              <small>Double-check everything looks OK before confirming.</small>
+            </div>
+            <div class="finishingInfor">
+              <div class="inforChoice1">
+                <div class="infor">
+                  <h1 id="selectedPlan" class="titlePlan">Exemplo</span><span id="selectedDate" class="titlePlan">(Exemplo)</span></h1>
+                  <a href="#right-menu-step2" id="changePlan">Change</a>
+                </div>
+                <p class="finalPrice">$2<span class="numberYear">/</span><span class="price">mo</span></p>
+              </div>
+              <div class="inforServices">
+                <p class="services">Online service</p>
+                <p class="finalPrice">+$2<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p class="services">Larger storage</p>
+                <p class="finalPrice">+$2<span class="numberYear">/</span><span class="price">mo</span></p>
+              </div>
+            </div>
+            <div class="totalLeft">
+              <p class="finishingTotal">
+                Total
+                <span>(per </span>
+                <span id="totalDate">month)</span>
+              </p>
+            
+                <span id="totalPrice" class="totalPrice">$12/
+                <span class="monthOrYear">mo</span></span>
+              </div>
+        <div class="buttons">
+          <button id="backtoStep2" onclick="backtostep2()">Go Back</button>
+          <button id="confirm" class='btn'>Confirm</button>
+        </div>
     </div>
   </div>
   <script src="main.js"></script>

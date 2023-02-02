@@ -191,13 +191,27 @@ const month = document.querySelectorAll('.monthsfree');
     });
   }
   );
-  /**
-   * logica para selecionar o item.
-   */
+
   // pick items
   item1 = document.getElementById('item1');
   item2 = document.getElementById('item2');
   item3 = document.getElementById('item3');
   input = document.querySelectorAll('.inputRadio')
-  allItems = [item1, item2, item3];
+  const allItemsArray = [item1, item2, item3];
+  for(let i = 0; i < allItemsArray.length; i++){
+    allItemsArray[i].addEventListener('click', function () {
+      allItemsArray[i].classList.toggle('itemSelected');
+      if(allItemsArray[i].classList.contains('itemSelected')){
+        input[i].checked = true;
+      }
+      else{
+        input[i].checked = false;
+      }
+    });
+  }
+
+  // finishing up
+  const selectedPlan = document.getElementById('selectedPlan');
+  const selectedDate = document.getElementById('selectedDate');
+  
   

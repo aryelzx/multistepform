@@ -240,14 +240,8 @@ small {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.card1:hover {
-  border: 1px solid hsl(243, 100%, 62%);
-  background-color: hsl(217, 100%, 97%);
-}
-.card2:hover {
-  border: 1px solid hsl(243, 100%, 62%);
-  background-color: hsl(217, 100%, 97%);
-}
+.card1:hover,
+.card2:hover,
 .card3:hover {
   border: 1px solid hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
@@ -295,7 +289,8 @@ small {
   top: 77%;
   transition: all 0.3s ease-in-out;
 }
-.btn-back:hover {
+#backtoStep1:hover,
+#backtoStep2:hover {
   color: hsl(213, 96%, 18%);
 }
 .right-menu-step3 {
@@ -331,6 +326,10 @@ small {
   cursor: pointer;
   position: relative;
 }
+.item:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
 .itemSelected {
   border: 1px solid hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
@@ -361,7 +360,63 @@ small {
   font-weight: 500;
   color: hsl(243, 100%, 62%);
 }
-
+.finishingInfor {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(217, 100%, 97%);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.titlePlan {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.inforServices {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 10px;
+}
+.inforChoice1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+a {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  color: hsl(213, 96%, 18%);
+}
+.infor {
+  display: flex;
+  flex-direction: column;
+}
+.totalLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+}
+.finalPrice {
+  display: flex;
+  justify-content: end;
+  opacity: 0.7;
+}
+.finishingTotal {
+  margin: 10px 10px;
+  opacity: 0.7;
+}
+.totalPrice {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: hsl(243, 100%, 62%);
+}
+#confirm {
+  background-color: hsl(243, 100%, 62%);
+}
 .active {
   display: none;
 }
