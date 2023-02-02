@@ -9,3 +9,11 @@ IR PARA PÁGINA 2, PÁGS 1 E 3 CONTAIN ACTIVE
 VOLTAR A PAGINA 1, PAGINA 2 E 3 CONTAIN ACTIVE.
 IR P PAG 3, PAGS 1 E 2 CONTAIN ACTIVE
 VOLTAR P PAG 2, PAGS 1 E 3 CONTAIN ACTIVE.
+
+
+
+se o radio estiver ativo, mostrar o yr.
+se clicar no card com radio ativo, mostrar opções de ano no step 3
+
+if input radio checked show itemSelected
+

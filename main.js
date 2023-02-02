@@ -100,12 +100,22 @@ const month = document.querySelectorAll('.monthsfree');
             });
             
             ;
-        });
-        
-      
-      }
-    });
-   });
+        });  
+      } 
+   }); 
+   const showZero = document.querySelectorAll('.showZero');
+   if(toggle.checked){
+     showZero.forEach(function (el) {
+       el.classList.remove('active');
+     });
+   }
+   else{
+     showZero.forEach(function (el) {
+       el.classList.add('active');
+     });
+   }
+ 
+  });
    
    //input required && change step
    const login = document.getElementById('Name');
@@ -168,13 +178,26 @@ const month = document.querySelectorAll('.monthsfree');
   const card2 = document.querySelector('.card2');
   const card3 = document.querySelector('.card3');
   const allCardsArray = [card1, card2, card3];
+  const price = document.querySelectorAll('.pricePage3');
   allCardsArray.forEach(function (el) {
     el.addEventListener('click', function () {
-      
+     el.classList.add('cardSelected');
+      allCardsArray.forEach(function (al) {
+        if (al != el) {
+          al.classList.remove('cardSelected');
+        }
+      });
+
     });
   }
   );
+  /**
+   * logica para selecionar o item.
+   */
+  // pick items
+  item1 = document.getElementById('item1');
+  item2 = document.getElementById('item2');
+  item3 = document.getElementById('item3');
+  input = document.querySelectorAll('.inputRadio')
+  allItems = [item1, item2, item3];
   
-    
-
-

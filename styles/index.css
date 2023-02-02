@@ -237,6 +237,8 @@ small {
   align-items: center;
   width: 120px;
   height: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .card1:hover {
   border: 1px solid hsl(243, 100%, 62%);
@@ -247,6 +249,10 @@ small {
   background-color: hsl(217, 100%, 97%);
 }
 .card3:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+.cardSelected {
   border: 1px solid hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
 }
@@ -306,10 +312,13 @@ small {
   gap: 10px;
   margin-top: 1rem;
 }
-.checkboxs input {
-  width: 20px;
-  height: 17px;
-  margin-left: 0.5rem;
+.inputRadio {
+  width: 30px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
 }
 .item {
   display: flex;
@@ -322,7 +331,7 @@ small {
   cursor: pointer;
   position: relative;
 }
-.item:hover {
+.itemSelected {
   border: 1px solid hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
 }
@@ -349,7 +358,7 @@ small {
   position: absolute;
   left: 80%;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
   color: hsl(243, 100%, 62%);
 }
 
