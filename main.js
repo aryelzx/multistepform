@@ -13,18 +13,9 @@ step.forEach(function (el) {
 page1 = document.querySelector('.right-menu-step1');
 page2 = document.querySelector('.right-menu-step2');
 page3 = document.querySelector('.right-menu-step3');
+page4 = document.querySelector('.right-menu-step4');
 
-goToStep2 = document.getElementById('goToStep2');
-goToStep3 = document.getElementById('goToStep3');
-
-backToStep1 = document.getElementById('backtoStep1');
-backToStep2 = document.getElementById('backtoStep2');
-
-const allPages = [page1, page2, page3];
-/**
- * BOTAO COM ID DIFERENTE PARA FAZER A FUNCAO CHANGESTEP FUNCIONAR 
- */
-
+const allPages = [page1, page2, page3, page4];
   //change steps
   const gotostep2 = () => {
     page2.classList.remove('active');
@@ -37,6 +28,13 @@ const allPages = [page1, page2, page3];
     page3.classList.remove('active');
     page1.classList.add('active');
     page2.classList.add('active');
+    return true;
+  }
+  const gotostep4 = () => {
+    page4.classList.remove('active');
+    page1.classList.add('active');
+    page2.classList.add('active');
+    page3.classList.add('active');
     return true;
   }
   
@@ -53,12 +51,19 @@ const allPages = [page1, page2, page3];
     page3.classList.add('active');
     return true;
 };
+  const backtostep3 = () => {
+    page3.classList.remove('active');
+    page1.classList.add('active');
+    page2.classList.add('active');
+    page4.classList.add('active');
+    return true;
+};
 
 //toggle radio step2
 const toggle = document.getElementById('toggleP');
 const month = document.querySelectorAll('.monthsfree');
 
-
+// cardPrice DINAMICO
 
 // switch toggle 
 //change price
@@ -179,19 +184,49 @@ const month = document.querySelectorAll('.monthsfree');
   const card3 = document.querySelector('.card3');
   const allCardsArray = [card1, card2, card3];
   const price = document.querySelectorAll('.pricePage3');
+  const cardTitle1 = document.getElementById('cardTitle1');
+  const cardTitle2 = document.getElementById('cardTitle2');
+  const cardTitle3 = document.getElementById('cardTitle3');
+  const cardTitleArray = [cardTitle1, cardTitle2, cardTitle3];
   allCardsArray.forEach(function (el) {
     el.addEventListener('click', function () {
-     el.classList.add('cardSelected');
+      el.classList.add('cardSelected');
       allCardsArray.forEach(function (al) {
         if (al != el) {
           al.classList.remove('cardSelected');
         }
       });
-
     });
   }
   );
 
+  //pick title of card
+  const selectedPlan = document.getElementById('selectedPlan');
+  const setDate = document.getElementById('selectedDate');
+  const cardPrice1 = document.getElementById('cardPrice1');
+  const cardPrice2 = document.getElementById('cardPrice2');
+  const cardPrice3 = document.getElementById('cardPrice3');
+  const cardPrice = [cardPrice1, cardPrice2, cardPrice3];
+  const finalPrice = document.getElementById('finalPrice');
+  for(let i = 0; i < allCardsArray.length; i++){
+    allCardsArray[i].addEventListener('click', function () {
+      if(allCardsArray[i].classList.contains('cardSelected')){
+        console.log(cardTitleArray[i].innerText);
+        console.log(cardPrice[i].innerText)
+        selectedPlan.innerText = cardTitleArray[i].innerText;
+        finalPrice.innerText = cardPrice[i].innerText;
+        changeValue();
+      }
+    });
+  }
+  const changeValue = () => {
+    if(toggle.checked){
+      setDate.innerText = 'Anual';
+    }
+    else{
+      setDate.innerText = 'Mensal';
+    }
+  }
   // pick items
   item1 = document.getElementById('item1');
   item2 = document.getElementById('item2');
@@ -210,8 +245,6 @@ const month = document.querySelectorAll('.monthsfree');
     });
   }
 
-  // finishing up
-  const selectedPlan = document.getElementById('selectedPlan');
-  const selectedDate = document.getElementById('selectedDate');
+
   
   

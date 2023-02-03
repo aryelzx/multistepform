@@ -56,7 +56,7 @@
     </div>
   </div>
   <div class="right-menu">
-        <!-- <div class="right-menu-step1">
+        <div class="right-menu-step1 active">
             <div className="right-menu-info">
                 <h1>Personal Info</h1>
                 <small>Please provide your name, email adress and phone number.</small>
@@ -80,20 +80,20 @@
             <div class="cards">
               <div class="card1">
                 <img src="./assets/images/icon-arcade.svg" alt="image">
-                <h2>Arcade</h2>
-                <p>$9<span class="numberYear">/</span><span class="price">mo</span></p>
+                <h2 id="cardTitle1">Arcade</h2>
+                <p id="cardPrice1">$9<span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
               <div class="card2">
                 <img src="./assets/images/icon-advanced.svg" alt="image">
-                <h2>Advanced</h2>
-                <p>$12<span class="numberYear">/</span><span class="price">mo</span></p>
+                <h2 id="cardTitle2">Advanced</h2>
+                <p id="cardPrice2">$12<span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
               <div class="card3">
                 <img src="./assets/images/icon-pro.svg" alt="image">
-                <h2>Pro</h2>
-                <p>$15<span class="numberYear">/</span><span class="price">mo</span></p>
+                <h2 id="cardTitle3">Pro</h2>
+                <p id="cardPrice3">$15<span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
             </div>
@@ -106,10 +106,11 @@
               <p class="styledYear ">Yearly</p>
             </div>
             <div class="buttons">
-              <button id="backtoStep1" onclick="backtostep1()">Go Back</button>
+              <button class="btn-back" onclick="backtostep1()">Go Back</button>
               <button id="goToStep3" class='btn' onclick="gotostep3()">Next Step</button>
             </div>
           </div>
+          
           <div class="right-menu-step3 active">
             <div class="right-menu-info">
               <h1>Pick add-ons</h1>
@@ -143,10 +144,10 @@
               </div>
             </div>
             <div class="buttons">
-              <button id="backtoStep2" onclick="backtostep2()">Go Back</button>
-              <button id="btnStep4" class='btn'>Next Step</button>
+              <button class="btn-back" onclick="backtostep2()">Go Back</button>
+              <button class='btn' onclick="gotostep4()">Next Step</button>
             </div>
-          </div> -->
+          </div>
           <div class="right-menu-step4">
             <div class="right-menu-info">
               <h1>Finishing up</h1>
@@ -155,16 +156,17 @@
             <div class="finishingInfor">
               <div class="inforChoice1">
                 <div class="infor">
-                  <h1 id="selectedPlan" class="titlePlan">Exemplo</span><span id="selectedDate" class="titlePlan">(Exemplo)</span></h1>
+                  <div class="titleinfor">
+                    <h1 id="selectedPlan" class="titlePlan"></span></h1>
+                    <span id="selectedDate"></span>
+                  </div>
                   <a href="#right-menu-step2" id="changePlan">Change</a>
                 </div>
-                <p class="finalPrice">$2<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p><span id="finalPrice"></span></p>
               </div>
               <div class="inforServices">
-                <p class="services">Online service</p>
-                <p class="finalPrice">+$2<span class="numberYear">/</span><span class="price">mo</span></p>
-                <p class="services">Larger storage</p>
-                <p class="finalPrice">+$2<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p class="services">Online service <span class="finalPriceServices">+$1<span class="numberYear">/</span><span class="price">mo</span></span></p>
+                <p class="services">Larger storage <span class="finalPriceServices">+$2<span class="numberYear">/</span><span class="price">mo</span></span></p>
               </div>
             </div>
             <div class="totalLeft">
@@ -178,7 +180,7 @@
                 <span class="monthOrYear">mo</span></span>
               </div>
         <div class="buttons">
-          <button id="backtoStep2" onclick="backtostep2()">Go Back</button>
+          <button class="btn-back" id="backtoStep3" onclick="backtostep3()">Go Back</button>
           <button id="confirm" class='btn'>Confirm</button>
         </div>
     </div>

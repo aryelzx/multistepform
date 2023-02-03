@@ -17,3 +17,4 @@ se clicar no card com radio ativo, mostrar opções de ano no step 3
 
 if input radio checked show itemSelected
 
+ao clicar no card, mostrar o titulo do card

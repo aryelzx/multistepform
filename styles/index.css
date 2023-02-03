@@ -276,8 +276,7 @@ small {
   padding: 10px;
   gap: 10px;
 }
-#backtoStep1,
-#backtoStep2 {
+.btn-back {
   display: flex;
   background: none;
   border: none;
@@ -289,8 +288,7 @@ small {
   top: 77%;
   transition: all 0.3s ease-in-out;
 }
-#backtoStep1:hover,
-#backtoStep2:hover {
+.btn-back {
   color: hsl(213, 96%, 18%);
 }
 .right-menu-step3 {
@@ -367,16 +365,25 @@ small {
   margin-top: 20px;
   padding: 10px;
   border-radius: 10px;
+  width: 100%;
+  height: 60%;
+}
+.titleinfor {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 .titlePlan {
   font-size: 1rem;
   font-weight: 500;
 }
 .inforServices {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10px;
   opacity: 0.7;
-  font-size: 0.9rem;
-  font-weight: 400;
-  padding: 10px;
+  gap: 15px;
 }
 .inforChoice1 {
   display: flex;
@@ -400,10 +407,9 @@ a {
   align-items: center;
   padding: 7px;
 }
-.finalPrice {
-  display: flex;
-  justify-content: end;
-  opacity: 0.7;
+.finalPriceServices {
+  position: absolute;
+  left: 71%;
 }
 .finishingTotal {
   margin: 10px 10px;
