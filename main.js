@@ -1,14 +1,8 @@
 //menu left 
-step = document.querySelectorAll('.number-step');
-step.forEach(function (el) {
-  el.addEventListener('click', function () {
-    step.forEach(function (el) {
-      el.classList.remove('hide');
-    });
-    this.classList.add('hide');
-  });
-}
-);
+step1 = document.querySelector('.step1');
+step2 = document.querySelector('.step2');
+step3 = document.querySelector('.step3');
+step4 = document.querySelector('.step4');
 //menu right change steps
 page1 = document.querySelector('.right-menu-step1');
 page2 = document.querySelector('.right-menu-step2');
@@ -18,19 +12,25 @@ page4 = document.querySelector('.right-menu-step4');
 const allPages = [page1, page2, page3, page4];
   //change steps
   const gotostep2 = () => {
+    step2.classList.add('hide');
+    step1.classList.remove('hide');
     page2.classList.remove('active');
     page1.classList.add('active');
     page3.classList.add('active')
     return true;
   };
 
-  const gotostep3 = () => { 
+  const gotostep3 = () => {
+    step3.classList.add('hide');
+    step2.classList.remove('hide');
     page3.classList.remove('active');
     page1.classList.add('active');
     page2.classList.add('active');
     return true;
   }
   const gotostep4 = () => {
+    step4.classList.add('hide');
+    step3.classList.remove('hide');
     page4.classList.remove('active');
     page1.classList.add('active');
     page2.classList.add('active');
@@ -40,18 +40,24 @@ const allPages = [page1, page2, page3, page4];
   
 //back steps
   const backtostep1 = () => {
+    step2.classList.remove('hide');
+    step1.classList.add('hide');
     page1.classList.remove('active');
     page2.classList.add('active');
     page3.classList.add('active');
   return true;
 };
   const backtostep2 = () => {
+    step3.classList.remove('hide');
+    step2.classList.add('hide');
     page2.classList.remove('active');
     page1.classList.add('active');
     page3.classList.add('active');
     return true;
 };
   const backtostep3 = () => {
+    step4.classList.remove('hide');
+    step3.classList.add('hide');
     page3.classList.remove('active');
     page1.classList.add('active');
     page2.classList.add('active');
@@ -63,9 +69,7 @@ const allPages = [page1, page2, page3, page4];
 const toggle = document.getElementById('toggleP');
 const month = document.querySelectorAll('.monthsfree');
 
-// cardPrice DINAMICO
 
-// switch toggle 
 //change price
    toggle.addEventListener('click', function () {
     const changedPrice = document.querySelectorAll('.price');
@@ -73,6 +77,7 @@ const month = document.querySelectorAll('.monthsfree');
     const styledMonth = document.querySelectorAll('.styledMonth');
     const styledYear = document.querySelectorAll('.styledYear');
 
+    
     changedPrice.forEach(function (el) {
       el.innerText = 'yr';
       priceYear.forEach(function (al) {
@@ -183,7 +188,7 @@ const month = document.querySelectorAll('.monthsfree');
   const card2 = document.querySelector('.card2');
   const card3 = document.querySelector('.card3');
   const allCardsArray = [card1, card2, card3];
-  const price = document.querySelectorAll('.pricePage3');
+ 
   const cardTitle1 = document.getElementById('cardTitle1');
   const cardTitle2 = document.getElementById('cardTitle2');
   const cardTitle3 = document.getElementById('cardTitle3');
@@ -195,6 +200,7 @@ const month = document.querySelectorAll('.monthsfree');
         if (al != el) {
           al.classList.remove('cardSelected');
         }
+        
       });
     });
   }
@@ -208,11 +214,19 @@ const month = document.querySelectorAll('.monthsfree');
   const cardPrice3 = document.getElementById('cardPrice3');
   const cardPrice = [cardPrice1, cardPrice2, cardPrice3];
   const finalPrice = document.getElementById('finalPrice');
+  const totalDate = document.getElementById('totalDate');
+  const totalPrice = document.getElementById('totalPrice');
+  const sumPriceCard = document.querySelectorAll('.sumPriceCard')
+  const pricePage3TotalSum = document.querySelectorAll('.pricePage3TotalSum');
   for(let i = 0; i < allCardsArray.length; i++){
     allCardsArray[i].addEventListener('click', function () {
       if(allCardsArray[i].classList.contains('cardSelected')){
-        console.log(cardTitleArray[i].innerText);
-        console.log(cardPrice[i].innerText)
+      
+        //Preço do Card
+        let total = Number(sumPriceCard[i].innerText)
+        console.log(total);
+        
+
         selectedPlan.innerText = cardTitleArray[i].innerText;
         finalPrice.innerText = cardPrice[i].innerText;
         changeValue();
@@ -221,30 +235,49 @@ const month = document.querySelectorAll('.monthsfree');
   }
   const changeValue = () => {
     if(toggle.checked){
-      setDate.innerText = 'Anual';
+      setDate.innerText = '(Yearly)';
+      totalDate.innerText = ' (per year)';
     }
     else{
-      setDate.innerText = 'Mensal';
+      setDate.innerText = '(Monthly)';
+      totalDate.innerText = ' (per month)';
     }
   }
+
   // pick items
-  item1 = document.getElementById('item1');
-  item2 = document.getElementById('item2');
-  item3 = document.getElementById('item3');
-  input = document.querySelectorAll('.inputRadio')
+  const services = document.getElementById('services');
+  const itemTitle = document.querySelectorAll('.itemTitle');
+
+  
+
+  const item1 = document.getElementById('item1');
+  const item2 = document.getElementById('item2');
+  const item3 = document.getElementById('item3');
+
+  const service1 = document.getElementById('service1');
+  const service2 = document.getElementById('service2');
+  const service3 = document.getElementById('service3');
+  const input = document.querySelectorAll('.inputRadio')
+  const priceService = document.querySelectorAll('.priceService');
+  
   const allItemsArray = [item1, item2, item3];
+  const allServicesArray = [service1, service2, service3];
   for(let i = 0; i < allItemsArray.length; i++){
     allItemsArray[i].addEventListener('click', function () {
       allItemsArray[i].classList.toggle('itemSelected');
       if(allItemsArray[i].classList.contains('itemSelected')){
+        allServicesArray[i].classList.remove('active');
+        priceService[i].classList.remove('active');        
         input[i].checked = true;
       }
       else{
+        allServicesArray[i].classList.add('active');
+        priceService[i].classList.add('active');
         input[i].checked = false;
       }
     });
-  }
-
+  } 
 
   
+ 
   

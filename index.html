@@ -18,7 +18,7 @@
     <div class='steps'>
       <div class='step-container'>
         <div class='step-circle'>
-          <span class='number-step hide'>1</span>
+          <span class='number-step step1 hide'>1</span>
         </div>
         <div class='step-infor'>
           <small >STEP 1</small>
@@ -28,7 +28,7 @@
       <div class='step-container'>
         <div class='step-circle'>
           <span
-          class='number-step'>2</span>
+          class='number-step step2'>2</span>
         </div>
         <div class='step-infor'>
           <small>STEP 2</small>
@@ -37,7 +37,7 @@
       </div>
       <div class='step-container'>
         <div class='step-circle'>
-         <span class='number-step'>3</span>
+         <span class='number-step step3'>3</span>
         </div>
         <div class='step-infor'>
           <small>STEP 3</small>
@@ -46,7 +46,7 @@
       </div>
       <div class='step-container'>
         <div class='step-circle'>
-          <span class='number-step'>4</span>
+          <span class='number-step step4'>4</span>
         </div>
         <div class='step-infor'>
           <small>STEP 4</small>
@@ -81,19 +81,19 @@
               <div class="card1">
                 <img src="./assets/images/icon-arcade.svg" alt="image">
                 <h2 id="cardTitle1">Arcade</h2>
-                <p id="cardPrice1">$9<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p id="cardPrice1">$<span class="sumPriceCard">9</span><span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
               <div class="card2">
                 <img src="./assets/images/icon-advanced.svg" alt="image">
                 <h2 id="cardTitle2">Advanced</h2>
-                <p id="cardPrice2">$12<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p id="cardPrice2">$<span class="sumPriceCard">12</span><span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
               <div class="card3">
                 <img src="./assets/images/icon-pro.svg" alt="image">
                 <h2 id="cardTitle3">Pro</h2>
-                <p id="cardPrice3">$15<span class="numberYear">/</span><span class="price">mo</span></p>
+                <p id="cardPrice3">$<span class="sumPriceCard">15</span><span class="numberYear">/</span><span class="price">mo</span></p>
                 <p class="monthsfree active">2 months free</p>
               </div>
             </div>
@@ -121,26 +121,26 @@
                   <input type="checkbox" class="inputRadio">
                   <span class="checkmark"></span>
                   <div class="aboutItems">
-                    <p>Online Service</p> 
+                    <p class="itemTitle">Online Service</p> 
                     <span class="itemDescription">Acess to multiplayer games</span>
                   </div>
-                <h3 class="price-page3">+$1<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                <h3 class="pricePage3">+$<span class="pricePage3TotalSum">1</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
               <div class="item" id="item2">
                 <input type="checkbox" class="inputRadio">
                   <div class="aboutItems">
-                    <p>Larger storage</p>
+                    <p class="itemTitle">Larger storage</p>
                     <span class="itemDescription">Extra TB of cloud save</span>
                   </div>
-                  <h3 class="price-page3">+$2<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                  <h3 class="pricePage3">+$<span class="pricePage3TotalSum">2</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
               <div class="item" id="item3">
                 <input type="checkbox" class="inputRadio">
                   <div class="aboutItems">
-                    <p>Customizable profile</p>
+                    <p class="itemTitle">Customizable profile</p>
                     <span class="itemDescription">Custom theme on your profile</span>
                   </div>
-                  <h3 class="price-page3">+$2<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                  <h3 class="pricePage3">+$<span class="pricePage3TotalSum">2</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
             </div>
             <div class="buttons">
@@ -165,19 +165,51 @@
                 <p><span id="finalPrice"></span></p>
               </div>
               <div class="inforServices">
-                <p class="services">Online service <span class="finalPriceServices">+$1<span class="numberYear">/</span><span class="price">mo</span></span></p>
-                <p class="services">Larger storage <span class="finalPriceServices">+$2<span class="numberYear">/</span><span class="price">mo</span></span></p>
+                <p id="services">
+                  <span class="finalPrice active" id="service1"> 
+                    Online Service 
+                    <h3 class="pricePage3 priceService active">+$1
+                      <span>
+                        <span class="showZero active">0</span>
+                        /</span>
+                        <span class="price">mo</span>
+                    </h3> 
+                  </span>
+                  <span class="finalPrice active" id="service2">
+                     <h3 class="pricePage3 priceService active">+$2
+                      <span>
+                        <span class="showZero active">0</span>
+                        /</span>
+                        <span class="price">mo</span>
+                    </h3>
+                    Larger storage
+                  </span>
+                  <span class="finalPrice active" id="service3">
+                    <h3 class="pricePage3 priceService active">+$2
+                      <span>
+                        <span class="showZero active">0</span>
+                        /</span>
+                        <span class="price">mo</span>
+                    </h3>
+                     Customizable profile
+                     
+                  </span>
+                </p>
               </div>
             </div>
             <div class="totalLeft">
               <p class="finishingTotal">
                 Total
-                <span>(per </span>
-                <span id="totalDate">month)</span>
+                <span id="totalDate"></span>
               </p>
             
-                <span id="totalPrice" class="totalPrice">$12/
-                <span class="monthOrYear">mo</span></span>
+                <span id="totalPrice" class="totalPrice">
+                  <span>
+                    <span class="showZero active">0</span>
+                    /
+                  </span>
+                    <span class="price">mo</span>
+                </span>
               </div>
         <div class="buttons">
           <button class="btn-back" id="backtoStep3" onclick="backtostep3()">Go Back</button>
