@@ -66,6 +66,7 @@ const allPages = [page1, page2, page3, page4];
     page2.classList.remove('active');
     page1.classList.add('active');
     page3.classList.add('active');
+    page4.classList.add('active');
     thankyou.classList.add('active');
     return true;
 };
@@ -93,6 +94,8 @@ const month = document.querySelectorAll('.monthsfree');
     const styledYear = document.querySelectorAll('.styledYear');
     const setDate = document.getElementById('selectedDate');
     const totalDate = document.getElementById('totalDate');   
+  
+    
 
       changedPrice.forEach(function (el) {
       el.innerText = 'yr';
@@ -107,9 +110,15 @@ const month = document.querySelectorAll('.monthsfree');
       });
       setDate.innerText = '(Yearly)';
       totalDate.innerText = ' (per year)';
-      
-    
+
+      for(let i = 0; i < allCardsArray.length; i++){
+        if(allCardsArray[i].classList.contains('cardSelected')){
+          selectedPlan.innerText = cardTitleArray[i].innerText;
+          finalPrice.innerText = cardPrice[i].innerText;  
+        }
+      }
     });
+
       month.forEach(function (mostrar) {
       mostrar.classList.toggle('active');
       if (mostrar.classList.contains('active')) {
@@ -124,7 +133,13 @@ const month = document.querySelectorAll('.monthsfree');
 
               setDate.innerText = '(Monthly)';
               totalDate.innerText = ' (per month)';
-              
+
+              for(let i = 0; i < allCardsArray.length; i++){
+                if(allCardsArray[i].classList.contains('cardSelected')){
+                  selectedPlan.innerText = cardTitleArray[i].innerText;
+                  finalPrice.innerText = cardPrice[i].innerText;  
+                }
+              }
             }
             styledMonth.forEach(function (al) {
               al.classList.add('lit');
@@ -232,24 +247,21 @@ const month = document.querySelectorAll('.monthsfree');
 
   //pick title of card
   const selectedPlan = document.getElementById('selectedPlan');
-  const cardPrice1 = document.getElementById('cardPrice1');
-  const cardPrice2 = document.getElementById('cardPrice2');
-  const cardPrice3 = document.getElementById('cardPrice3');
-  const cardPrice = [cardPrice1, cardPrice2, cardPrice3];
-  let finalPrice = document.getElementById('finalPrice');
   const totalPrice = document.getElementById('totalPrice');
-  let sumPriceCard = document.querySelectorAll('.sumPriceCard')
   const pricePage3TotalSum = document.querySelectorAll('.pricePage3TotalSum');
- 
+  let sumPriceCard = document.querySelectorAll('.sumPriceCard')
+    const cardPrice1 = document.getElementById('cardPrice1');
+    const cardPrice2 = document.getElementById('cardPrice2');
+    const cardPrice3 = document.getElementById('cardPrice3');
+    const cardPrice = [cardPrice1, cardPrice2, cardPrice3];
+    let finalPrice = document.getElementById('finalPrice');
 
-  for(let i = 0; i < allCardsArray.length; i++){
-    allCardsArray[i].addEventListener('click', function () {
-      if(allCardsArray[i].classList.contains('cardSelected')){
+    for(let i = 0; i < allCardsArray.length; i++){
+      allCardsArray[i].addEventListener('click', function () {
         selectedPlan.innerText = cardTitleArray[i].innerText;
-        finalPrice.innerText = cardPrice[i].innerText;  
-      }
-    });
-  }
+        finalPrice.innerText = cardPrice[i].innerText;
+      })};
+  
   // pick items
   const services = document.getElementById('services');
   const itemTitle = document.querySelectorAll('.itemTitle');
@@ -296,19 +308,18 @@ const month = document.querySelectorAll('.monthsfree');
       if(allItemsArray[i].classList.contains('itemSelected')){
         totalItem += Number(pricePage3TotalSum[i].innerText);
         if(toggle.checked){
-        totalPrice.innerText = `$${Number(totalItem + totalCard) + '0' + '/' + 'yr'}`;
-        }
-        else{
-          totalPrice.innerText = `+$${Number(totalItem + totalCard) + '/' + 'mo'}`;
-        }
+        totalPrice.innerText = `+$${Number(totalItem + totalCard)}0/yr`       
+      } else{
+        totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`
       }
+    }
       else{
         totalItem -= Number(pricePage3TotalSum[i].innerText);
         if(toggle.checked){
-        totalPrice.innerText = `$${Number(totalItem + totalCard) + '0' + '/' + 'yr'}`;
+        totalPrice.innerText = `+$${Number(totalItem + totalCard)}0/yr` 
         }
         else{
-          totalPrice.innerText = `+$${Number(totalItem + totalCard) + '/' + 'mo'}`;
+          totalPrice.innerText = `+$${Number(totalItem + totalCard)}/mo`
         }
       }
     })
