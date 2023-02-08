@@ -26,3 +26,4 @@ preço ja sendo puxado, falta por mais de uma opcao
 somar o preco do card, e dos itens contain selected.
 
 um loop que rode os precos dos cards, e o selecionado soma com os items selecionados.
+se o item estiver mostrando, pegar o valor dele e somar com o outro que estiver mostrando.

@@ -124,7 +124,7 @@
                     <p class="itemTitle">Online Service</p> 
                     <span class="itemDescription">Acess to multiplayer games</span>
                   </div>
-                <h3 class="pricePage3">+$<span class="pricePage3TotalSum">1</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                <h3 class="pricePage3">+$1<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
               <div class="item" id="item2">
                 <input type="checkbox" class="inputRadio">
@@ -132,7 +132,7 @@
                     <p class="itemTitle">Larger storage</p>
                     <span class="itemDescription">Extra TB of cloud save</span>
                   </div>
-                  <h3 class="pricePage3">+$<span class="pricePage3TotalSum">2</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                  <h3 class="pricePage3">+$2<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
               <div class="item" id="item3">
                 <input type="checkbox" class="inputRadio">
@@ -140,7 +140,7 @@
                     <p class="itemTitle">Customizable profile</p>
                     <span class="itemDescription">Custom theme on your profile</span>
                   </div>
-                  <h3 class="pricePage3">+$<span class="pricePage3TotalSum">2</span><span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
+                  <h3 class="pricePage3">+$2<span><span class="showZero active">0</span>/</span><span class="price">mo</span></h3>
               </div>
             </div>
             <div class="buttons">
@@ -162,13 +162,13 @@
                   </div>
                   <a href="#right-menu-step2" id="changePlan">Change</a>
                 </div>
-                <p><span id="finalPrice"></span></p>
+                <p><span id="finalPrice"></span></span></p>
               </div>
               <div class="inforServices">
                 <p id="services">
                   <span class="finalPrice active" id="service1"> 
                     Online Service 
-                    <h3 class="pricePage3 priceService active">+$1
+                    <h3 class="pricePage3 priceService active">+$<span class="pricePage3TotalSum">1</span>
                       <span>
                         <span class="showZero active">0</span>
                         /</span>
@@ -176,7 +176,7 @@
                     </h3> 
                   </span>
                   <span class="finalPrice active" id="service2">
-                     <h3 class="pricePage3 priceService active">+$2
+                     <h3 class="pricePage3 priceService active">+$<span class="pricePage3TotalSum">2</span>
                       <span>
                         <span class="showZero active">0</span>
                         /</span>
@@ -185,7 +185,7 @@
                     Larger storage
                   </span>
                   <span class="finalPrice active" id="service3">
-                    <h3 class="pricePage3 priceService active">+$2
+                    <h3 class="pricePage3 priceService active">+$<span class="pricePage3TotalSum">2</span>
                       <span>
                         <span class="showZero active">0</span>
                         /</span>
@@ -213,8 +213,14 @@
               </div>
         <div class="buttons">
           <button class="btn-back" id="backtoStep3" onclick="backtostep3()">Go Back</button>
-          <button id="confirm" class='btn'>Confirm</button>
+          <button id="confirm" class='btn' onclick="gotofinish()">Confirm</button>
         </div>
+    </div>
+      <div class="thankyou active">
+        <img src="./assets/images/icon-thank-you.svg" alt="thanks">
+        <h1>Thank you!</h1>
+        <p class="thankyouDescription">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+      </div>
     </div>
   </div>
   <script src="main.js"></script>
