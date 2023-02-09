@@ -27,3 +27,5 @@ somar o preco do card, e dos itens contain selected.
 
 um loop que rode os precos dos cards, e o selecionado soma com os items selecionados.
 se o item estiver mostrando, pegar o valor dele e somar com o outro que estiver mostrando.
+
+o total, está somando o item 'active' mesmo ele não aparecendo.

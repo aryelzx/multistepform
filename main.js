@@ -115,6 +115,7 @@ const month = document.querySelectorAll('.monthsfree');
         if(allCardsArray[i].classList.contains('cardSelected')){
           selectedPlan.innerText = cardTitleArray[i].innerText;
           finalPrice.innerText = cardPrice[i].innerText;  
+          totalPrice.innerText = `+$${Number(totalItem + totalCard)}0/yr`
         }
       }
     });
@@ -138,6 +139,7 @@ const month = document.querySelectorAll('.monthsfree');
                 if(allCardsArray[i].classList.contains('cardSelected')){
                   selectedPlan.innerText = cardTitleArray[i].innerText;
                   finalPrice.innerText = cardPrice[i].innerText;  
+                  totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`
                 }
               }
             }
@@ -258,9 +260,15 @@ const month = document.querySelectorAll('.monthsfree');
 
     for(let i = 0; i < allCardsArray.length; i++){
       allCardsArray[i].addEventListener('click', function () {
+        for(let i = 0; i < allItemsArray.length; i++){
+          allItemsArray[i].classList.remove('itemSelected');
+          
+          input[i].checked = false;
+        }
         selectedPlan.innerText = cardTitleArray[i].innerText;
         finalPrice.innerText = cardPrice[i].innerText;
-      })};
+      });
+    }
   
   // pick items
   const services = document.getElementById('services');
@@ -275,7 +283,8 @@ const month = document.querySelectorAll('.monthsfree');
   const priceService = document.querySelectorAll('.priceService');
   const allItemsArray = [item1, item2, item3];
   const allServicesArray = [service1, service2, service3];
-  for(let i = 0; i < allItemsArray.length; i++){
+  
+    for(let i = 0; i < allCardsArray.length; i++){
     allItemsArray[i].addEventListener('click', function () {
       allItemsArray[i].classList.toggle('itemSelected');
       if(allItemsArray[i].classList.contains('itemSelected')){
@@ -289,7 +298,7 @@ const month = document.querySelectorAll('.monthsfree');
         input[i].checked = false;
       }
     });
-  } 
+  };
 
 //sum total
 
@@ -297,7 +306,13 @@ const month = document.querySelectorAll('.monthsfree');
   for(let i = 0; i < allCardsArray.length; i++){
     allCardsArray[i].addEventListener('click', function () {
   if(allCardsArray[i].classList.contains('cardSelected')){
+    allItemsArray[i].classList.remove('itemSelected');
+    if(toggle.checked){
     totalCard = Number(sumPriceCard[i].innerText);
+    }
+    else{
+      totalCard = Number(sumPriceCard[i].innerText);
+    }
   };
   })
   };
@@ -306,22 +321,16 @@ const month = document.querySelectorAll('.monthsfree');
   for(let i = 0; i < allItemsArray.length; i++){
     allItemsArray[i].addEventListener('click', function () {
       if(allItemsArray[i].classList.contains('itemSelected')){
-        totalItem += Number(pricePage3TotalSum[i].innerText);
-        if(toggle.checked){
-        totalPrice.innerText = `+$${Number(totalItem + totalCard)}0/yr`       
-      } else{
+        totalItem += Number(pricePage3TotalSum[i].innerText); 
         totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`
-      }
+        if(toggle.checked){
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`
+        }
     }
       else{
-        totalItem -= Number(pricePage3TotalSum[i].innerText);
-        if(toggle.checked){
-        totalPrice.innerText = `+$${Number(totalItem + totalCard)}0/yr` 
-        }
-        else{
-          totalPrice.innerText = `+$${Number(totalItem + totalCard)}/mo`
-        }
+          totalItem -= Number(pricePage3TotalSum[i].innerText); 
       }
+      
     })
   }
 
