@@ -4,10 +4,10 @@ step2 = document.querySelector('.step2');
 step3 = document.querySelector('.step3');
 step4 = document.querySelector('.step4');
 //menu right change steps
-page1 = document.querySelector('.right-menu-step1');
-page2 = document.querySelector('.right-menu-step2');
-page3 = document.querySelector('.right-menu-step3');
-page4 = document.querySelector('.right-menu-step4');
+page1 = document.querySelector('.rightMenuStep1');
+page2 = document.querySelector('.rightMenuStep2');
+page3 = document.querySelector('.rightMenuStep3');
+page4 = document.querySelector('.rightMenuStep4');
 thankyou = document.querySelector('.thankyou');
 const allPages = [page1, page2, page3, page4];
   //change steps
@@ -262,7 +262,9 @@ const month = document.querySelectorAll('.monthsfree');
       allCardsArray[i].addEventListener('click', function () {
         for(let i = 0; i < allItemsArray.length; i++){
           allItemsArray[i].classList.remove('itemSelected');
-          
+          totalItem = 0;
+          allServicesArray[i].classList.add('active');
+          priceService[i].classList.add('active');
           input[i].checked = false;
         }
         selectedPlan.innerText = cardTitleArray[i].innerText;
@@ -319,19 +321,47 @@ const month = document.querySelectorAll('.monthsfree');
 
   totalItem = 0;
   for(let i = 0; i < allItemsArray.length; i++){
-    allItemsArray[i].addEventListener('click', function () {
-      if(allItemsArray[i].classList.contains('itemSelected')){
-        totalItem += Number(pricePage3TotalSum[i].innerText); 
-        totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`
-        if(toggle.checked){
-          totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`
+    allItemsArray[i].addEventListener('click', () => {
+        if (allItemsArray[i].classList.contains('itemSelected')) {
+          totalItem += Number(pricePage3TotalSum[i].innerText);
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`;
+          if (toggle.checked) {
+            totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`;
+          }
         }
-    }
-      else{
-          totalItem -= Number(pricePage3TotalSum[i].innerText); 
-      }
-      
-    })
+        if(!allItemsArray[i].classList.contains('itemSelected')) {
+          totalItem -= Number(pricePage3TotalSum[i].innerText);
+        }
+
+      })
+      allItemsArray[i].addEventListener('click', () => {
+        if (!allItemsArray[i].classList.contains('itemSelected')) {
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`;
+          if (toggle.checked) {
+            totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`;
+          }
+        }
+        else{
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`;
+          if (toggle.checked) {
+            totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`;
+          }
+        }
+      })
+      allCardsArray[i].addEventListener('click', () => {
+        if (allCardsArray[i].classList.contains('cardSelected')) {
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`;
+          if (toggle.checked) {
+            totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`;
+          }
+        }
+        else{
+          totalPrice.innerText = `$${Number(totalItem + totalCard)}/mo`;
+          if (toggle.checked) {
+            totalPrice.innerText = `$${Number(totalItem + totalCard)}0/yr`;
+          }
+        }
+      })
   }
 
 

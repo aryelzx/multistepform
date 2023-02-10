@@ -1,5 +1,5 @@
 * {
-  pedding: 0;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
@@ -69,22 +69,19 @@
   color: hsl(231, 100%, 99%);
 }
 /* form */
-.right-menu {
+.rightMenuStep1,
+.rightMenuStep2,
+.rightMenuStep3,
+.rightMenuStep4 {
   display: flex;
   flex-direction: column;
   grid-column: 2;
-  padding: 20px;
   height: 100%;
   width: 100%;
+  padding: 20px;
   margin-top: 15px;
 }
-.right-menu-step1 {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2;
-  height: 100%;
-  width: 100%;
-}
+
 label {
   opacity: 0.7;
   font-weight: 700;
@@ -190,13 +187,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.right-menu-step2 {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2;
-  height: 100%;
-  width: 100%;
-}
 .styledMonth,
 .styledYear {
   font-size: 1rem;
@@ -285,15 +275,8 @@ small {
   top: 77%;
   transition: all 0.3s ease-in-out;
 }
-.btn-back {
+.btn-back:hover {
   color: hsl(213, 96%, 18%);
-}
-.right-menu-step3 {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2;
-  height: 100%;
-  width: 100%;
 }
 .checkboxs {
   display: flex;
@@ -334,10 +317,10 @@ small {
   flex-direction: column;
   margin-left: 15px;
 }
-.item p {
+.itemTitle {
+  opacity: 1;
   font-weight: 700;
   font-size: 0.9rem;
-  color: hsl(213, 96%, 18%);
 }
 .itemDescription {
   font-weight: 500;
@@ -363,7 +346,6 @@ small {
   padding: 10px;
   border-radius: 10px;
   width: 100%;
-  height: 60%;
 }
 .titleinfor {
   display: flex;
