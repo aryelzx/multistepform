@@ -52,7 +52,8 @@
   .rightMenuStep1,
   .rightMenuStep2,
   .rightMenuStep3,
-  .rightMenuStep4 {
+  .rightMenuStep4,
+  .thankyou {
     position: relative;
     grid-column: 1 / 1;
     grid-row: 2 / 2;
@@ -133,9 +134,6 @@
     display: flex;
     margin-top: 2rem;
   }
-  .rightMenuStep3 {
-    height: 55vh;
-  }
   .checkboxs {
     margin-top: 2rem;
   }
@@ -146,6 +144,10 @@
     margin-left: 5px;
   }
   .itemDescription {
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+  }
+  .thankyouDescription {
     font-size: 0.8rem;
     color: hsl(231, 11%, 63%);
   }
@@ -174,8 +176,7 @@
     display: flex;
   }
   .btn {
-    display: absolute;
-    top: 40rem;
+    top: 37rem;
   }
 }
 @media screen and (min-width: 412px) and (max-width: 414px) {
@@ -184,18 +185,17 @@
     margin-top: 1rem;
   }
   .btn {
-    display: absolute;
     top: 42.5rem;
   }
 }
-@media screen and (min-width: 414px) and (min-height: 736px) {
+@media screen and (min-width: 414px) and (max-width: 728px) {
   .btn-back {
     display: flex;
-    margin-top: -0.5rem;
+    margin-top: -0.7rem;
   }
   .btn {
     display: absolute;
-    top: 38em;
+    top: 36.5rem;
   }
 }
 @media screen and (min-width: 414px) and (min-height: 896px) {
