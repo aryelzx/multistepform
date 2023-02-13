@@ -51,7 +51,8 @@
   }
   .rightMenuStep1,
   .rightMenuStep2,
-  .rightMenuStep3 .rightMenuStep4 {
+  .rightMenuStep3,
+  .rightMenuStep4 {
     position: relative;
     grid-column: 1 / 1;
     grid-row: 2 / 2;
@@ -82,8 +83,8 @@
     top: 125%;
   }
   .btn {
-    display: flex;
-    margin-top: 16rem;
+    display: absolute;
+    top: 25.5rem;
   }
   label {
     font-weight: 500;
@@ -132,6 +133,22 @@
     display: flex;
     margin-top: 2rem;
   }
+  .rightMenuStep3 {
+    height: 55vh;
+  }
+  .checkboxs {
+    margin-top: 2rem;
+  }
+  .item {
+    padding: 2px;
+  }
+  .aboutItems {
+    margin-left: 5px;
+  }
+  .itemDescription {
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+  }
 }
 @media screen and (max-width: 360px) {
   .btn-back {
@@ -139,18 +156,36 @@
     top: 123%;
   }
   .btn {
-    display: flex;
-    margin-top: 13.5rem;
+    display: absolute;
+    top: 20.5rem;
   }
 }
-@media screen and (min-width: 412px) and (max-width: 413px) {
+@media screen and (min-width: 360px) and (max-width: 374px) {
+  .btn-back {
+    display: flex;
+  }
+  .btn {
+    display: absolute;
+    top: 36rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 411px) {
+  .btn-back {
+    display: flex;
+  }
+  .btn {
+    display: absolute;
+    top: 40rem;
+  }
+}
+@media screen and (min-width: 412px) and (max-width: 414px) {
   .btn-back {
     display: flex;
     margin-top: 1rem;
   }
   .btn {
-    display: flex;
-    margin-top: 17rem;
+    display: absolute;
+    top: 42.5rem;
   }
 }
 @media screen and (min-width: 414px) and (min-height: 736px) {
@@ -159,8 +194,8 @@
     margin-top: -0.5rem;
   }
   .btn {
-    display: flex;
-    margin-top: 13.5rem;
+    display: absolute;
+    top: 38em;
   }
 }
 @media screen and (min-width: 414px) and (min-height: 896px) {
@@ -169,8 +204,8 @@
     margin-top: 1.5rem;
   }
   .btn {
-    display: flex;
-    margin-top: 19rem;
+    display: absolute;
+    top: 46rem;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
