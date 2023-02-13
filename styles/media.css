@@ -218,10 +218,6 @@
     background-color: #ffff;
     margin: 0 auto;
   }
-  /* .rightMenuStep2 {
-    top: -10%;
-    height: 65vh;
-  } */
   .stepTitle {
     font-size: 1.4rem;
   }
@@ -235,11 +231,11 @@
   }
   .btn-back {
     position: absolute;
-    top: 125%;
+    top: 122%;
   }
   .btn {
     display: absolute;
-    top: 37rem;
+    top: 120%;
   }
   label {
     font-weight: 500;
