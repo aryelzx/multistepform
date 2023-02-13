@@ -104,6 +104,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
   }
   .card1,
   .card2,
@@ -132,7 +133,6 @@
 
   .radio {
     display: flex;
-    margin-top: 2rem;
   }
   .checkboxs {
     margin-top: 2rem;
@@ -231,7 +231,7 @@
   }
   .btn-back {
     position: absolute;
-    top: 118.5%;
+    top: 118%;
   }
   .btn {
     display: absolute;
@@ -254,6 +254,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
   }
   .card1,
   .card2,
@@ -279,10 +280,8 @@
   .cards p {
     margin-top: 5px;
   }
-
   .radio {
     display: flex;
-    margin-top: 2rem;
   }
   .checkboxs {
     margin-top: 2rem;

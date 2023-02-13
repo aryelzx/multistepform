@@ -1,16 +1,13 @@
-//menu left 
 step1 = document.querySelector('.step1');
 step2 = document.querySelector('.step2');
 step3 = document.querySelector('.step3');
 step4 = document.querySelector('.step4');
-//menu right change steps
 page1 = document.querySelector('.rightMenuStep1');
 page2 = document.querySelector('.rightMenuStep2');
 page3 = document.querySelector('.rightMenuStep3');
 page4 = document.querySelector('.rightMenuStep4');
 thankyou = document.querySelector('.thankyou');
 const allPages = [page1, page2, page3, page4];
-  //change steps
   const gotostep2 = () => {
     step2.classList.add('hide');
     step1.classList.remove('hide');
@@ -20,7 +17,6 @@ const allPages = [page1, page2, page3, page4];
     thankyou.classList.add('active');
     return true;
   };
-
   const gotostep3 = () => {
     step3.classList.add('hide');
     step2.classList.remove('hide');
@@ -49,8 +45,6 @@ const allPages = [page1, page2, page3, page4];
     page3.classList.add('active');
     return true;
   }
-  
-//back steps
   const backtostep1 = () => {
     step2.classList.remove('hide');
     step1.classList.add('hide');
@@ -80,13 +74,8 @@ const allPages = [page1, page2, page3, page4];
     thankyou.classList.add('active');
     return true;
 };
-
-//toggle radio step2
 const toggle = document.getElementById('toggleP');
 const month = document.querySelectorAll('.monthsfree');
-
-
-//change price
    toggle.addEventListener('click', function () {
     const changedPrice = document.querySelectorAll('.price');
     const priceYear = document.querySelectorAll('.numberYear');
@@ -94,10 +83,7 @@ const month = document.querySelectorAll('.monthsfree');
     const styledYear = document.querySelectorAll('.styledYear');
     const setDate = document.getElementById('selectedDate');
     const totalDate = document.getElementById('totalDate');   
-  
-    
-
-      changedPrice.forEach(function (el) {
+     changedPrice.forEach(function (el) {
       el.innerText = 'yr';
       priceYear.forEach(function (al) {
         al.innerText = '0/'
@@ -110,7 +96,6 @@ const month = document.querySelectorAll('.monthsfree');
       });
       setDate.innerText = '(Yearly)';
       totalDate.innerText = ' (per year)';
-
       for(let i = 0; i < allCardsArray.length; i++){
         if(allCardsArray[i].classList.contains('cardSelected')){
           selectedPlan.innerText = cardTitleArray[i].innerText;
@@ -119,13 +104,11 @@ const month = document.querySelectorAll('.monthsfree');
         }
       }
     });
-
       month.forEach(function (mostrar) {
       mostrar.classList.toggle('active');
       if (mostrar.classList.contains('active')) {
         changedPrice.forEach(function (el) {
           el.innerText = 'mo';
-          
              if
               (el.innerText == 'mo') {
               priceYear.forEach(function (al) {
@@ -149,8 +132,6 @@ const month = document.querySelectorAll('.monthsfree');
             styledYear.forEach(function (al) {
               al.classList.remove('lit');
             });
-            
-            ;
         });  
       } 
    }); 
@@ -167,8 +148,7 @@ const month = document.querySelectorAll('.monthsfree');
    }
  
   });
-   
-   //input required && change step
+
    const login = document.getElementById('Name');
    const email = document.getElementById('Email');
    const phone = document.getElementById('Phone');
@@ -199,7 +179,6 @@ const month = document.querySelectorAll('.monthsfree');
         }
       if(
         phone.value.length < 11 || phone.value.length > 11 
-        
       ){
         container = document.createElement('div');
         container.classList.add('alert');
@@ -234,6 +213,7 @@ const month = document.querySelectorAll('.monthsfree');
   const cardTitle2 = document.getElementById('cardTitle2');
   const cardTitle3 = document.getElementById('cardTitle3');
   const cardTitleArray = [cardTitle1, cardTitle2, cardTitle3];
+
   allCardsArray.forEach(function (el) {
     el.addEventListener('click', function () {
       el.classList.add('cardSelected');
@@ -241,13 +221,11 @@ const month = document.querySelectorAll('.monthsfree');
         if (al != el) {
           al.classList.remove('cardSelected');
         }
-        
       });
     });
   }
   );
 
-  //pick title of card
   const selectedPlan = document.getElementById('selectedPlan');
   const totalPrice = document.getElementById('totalPrice');
   const pricePage3TotalSum = document.querySelectorAll('.pricePage3TotalSum');
@@ -271,8 +249,7 @@ const month = document.querySelectorAll('.monthsfree');
         finalPrice.innerText = cardPrice[i].innerText;
       });
     }
-  
-  // pick items
+
   const services = document.getElementById('services');
   const itemTitle = document.querySelectorAll('.itemTitle');
   const item1 = document.getElementById('item1');
@@ -302,8 +279,6 @@ const month = document.querySelectorAll('.monthsfree');
     });
   };
 
-//sum total
-
   let totalCard = 0;
   for(let i = 0; i < allCardsArray.length; i++){
     allCardsArray[i].addEventListener('click', function () {
@@ -315,8 +290,8 @@ const month = document.querySelectorAll('.monthsfree');
     else{
       totalCard = Number(sumPriceCard[i].innerText);
     }
-  };
-  })
+      };
+    })
   };
 
   totalItem = 0;
@@ -363,5 +338,3 @@ const month = document.querySelectorAll('.monthsfree');
         }
       })
   }
-
-
