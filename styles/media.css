@@ -231,11 +231,11 @@
   }
   .btn-back {
     position: absolute;
-    top: 99%;
+    top: 120%;
   }
   .btn {
     display: absolute;
-    top: 95%;
+    top: 118%;
   }
   label {
     font-weight: 500;
