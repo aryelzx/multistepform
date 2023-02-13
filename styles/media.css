@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
   .main-container {
     margin: 0 auto;
     width: 100%;
@@ -152,65 +152,167 @@
     color: hsl(231, 11%, 63%);
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 767px) {
+  .main-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+  .left-menu {
+    display: flex;
+  }
+  .bg-grid {
+    display: grid;
+    width: 100vw;
+    height: 90vh;
+    grid-template-columns: 1.3fr;
+    grid-template-rows: 0.6fr 1.4fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      ".";
+    background-color: hsl(206, 94%, 87%);
+    padding: 0;
+    gap: 0;
+  }
+  .step-infor {
+    display: none;
+  }
+  .number-step {
+    width: 34px;
+    height: 34px;
+    border: 1px solid hsl(231, 100%, 99%);
+  }
+  .left-menu {
+    display: flex;
+    height: 180px;
+    background-image: url("../assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+    justify-content: center;
+  }
+  .steps {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -25%;
+    padding: 0;
+    margin: 0;
+  }
+  .rightMenuStep1,
+  .rightMenuStep2,
+  .rightMenuStep3,
+  .rightMenuStep4,
+  .thankyou {
+    position: relative;
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+    width: 90%;
+    height: 65vh;
+    top: -15%;
+    border-radius: 10px;
+    background-color: #ffff;
+    margin: 0 auto;
+  }
+  /* .rightMenuStep2 {
+    top: -10%;
+    height: 65vh;
+  } */
+  .stepTitle {
+    font-size: 1.4rem;
+  }
+  .stepDescription {
+    display: flex;
+    opacity: 1;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    max-width: 78%;
+    color: hsl(231, 11%, 63%);
+  }
   .btn-back {
     position: absolute;
-    top: 123%;
+    top: 125%;
   }
   .btn {
     display: absolute;
-    top: 20.5rem;
-  }
-}
-@media screen and (min-width: 360px) and (max-width: 374px) {
-  .btn-back {
-    display: flex;
-  }
-  .btn {
-    display: absolute;
-    top: 36rem;
-  }
-}
-@media screen and (min-width: 375px) and (max-width: 411px) {
-  .btn-back {
-    display: flex;
-  }
-  .btn {
     top: 37rem;
   }
-}
-@media screen and (min-width: 412px) and (max-width: 414px) {
-  .btn-back {
-    display: flex;
+  label {
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+  }
+  .form {
     margin-top: 1rem;
   }
-  .btn {
-    top: 42.5rem;
+  .form input {
+    width: 100%;
   }
-}
-@media screen and (min-width: 414px) and (max-width: 728px) {
-  .btn-back {
+  .cards {
     display: flex;
-    margin-top: -0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
-  .btn {
-    display: absolute;
-    top: 36.5rem;
-  }
-}
-@media screen and (min-width: 414px) and (min-height: 896px) {
-  .btn-back {
+  .card1,
+  .card2,
+  .card3 {
     display: flex;
-    margin-top: 1.5rem;
+    justify-content: start;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 5rem;
+    padding-left: 1rem;
   }
-  .btn {
-    display: absolute;
-    top: 46rem;
+  .aboutCards {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 15px;
+  }
+  .cards h2 {
+    margin: 0;
+    color: hsl(213, 96%, 18%);
+  }
+  .cards p {
+    margin-top: 5px;
+  }
+
+  .radio {
+    display: flex;
+    margin-top: 2rem;
+  }
+  .checkboxs {
+    margin-top: 2rem;
+  }
+  .item {
+    padding: 2px;
+  }
+  .aboutItems {
+    margin-left: 5px;
+  }
+  .itemDescription {
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+  }
+  .thankyouDescription {
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
   }
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .bg-grid {
     width: 90vw;
+  }
+  .btn {
+    top: 28rem;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1024px) {
@@ -235,5 +337,21 @@
   .btn {
     margin-top: 0rem;
     margin-left: 5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .btn-back {
+    top: 38rem;
+  }
+  .btn {
+    top: 37rem;
+  }
+  .itemDescription {
+    font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+  }
+  .thankyouDescription {
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
   }
 }
